@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support - Fashion Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'poppins', sans-serif;
+            background-color:#7091e7;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #7091e7;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 40px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        /* Navigation Styles */
+        .help-navigation {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .help-navigation ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .help-navigation ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        .help-navigation ul li a {
+            font-size: 18px;
+            color: #7091e7;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .help-navigation ul li a:hover {
+            color:#7091e7;
+            text-decoration: underline;
+        }
+
+        /* Section Styles */
+        .help-section {
+            background-color: white;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .help-section h2 {
+            font-size: 32px;
+            color: #7091e7;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .help-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #7f8c8d;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .help-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .help-section ul li {
+            font-size: 18px;
+            color: #34495e;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        .help-section ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-size: 20px;
+            top: 0;
+        }
+
+        /* FAQ Item Styles */
+        .faq-item {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .faq-item h3 {
+            font-size: 22px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .faq-item p {
+            font-size: 16px;
+            color: #7f8c8d;
+            line-height: 1.5;
+        }
+
+        .faq-item a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .faq-item a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        /* Footer Styles */
+    /* Footer Styles */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Body Styles */
+body {
+    font-family: 'poppins', sans-serif;
+    background-color: #7091e7;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+{% include 'header.html' %}
+<header>
+    <div class="header-container">
+        <h1>Help & Support</h1>
+        <p>Let’s take a step ahead and help you better.</p>
+    </div>
+</header>
+
+<!-- Navigation for the Help Sections -->
+<section class="help-navigation">
+    <ul>
+        <li><a href="#partner-onboarding">Partner Onboarding</a></li>
+        <li><a href="#faqs">FAQs</a></li>
+    </ul>
+</section>
+
+<!-- Partner Onboarding Section -->
+<section id="partner-onboarding" class="help-section">
+    <h2>Partner Onboarding</h2>
+    <p>If you are a fashion brand, designer, or supplier, and would like to partner with us, here’s what you need to know:</p>
+    <ul>
+        <li>What documents do I need to submit for onboarding?</li>
+        <li>How long does it take for my store to go live on our platform?</li>
+        <li>What is the commission structure for fashion partners?</li>
+        <li>Is there a listing fee or any one-time onboarding fee?</li>
+        <li>How can I update my brand or product information once I’m live on the platform?</li>
+        <li>If I face any issues with onboarding, who should I contact?</li>
+    </ul>
+</section>
+
+
+
+<!-- FAQs Section -->
+<section id="faqs" class="help-section">
+    <h2>Frequently Asked Questions (FAQs)</h2>
+    
+    <!-- FAQ 1 -->
+    <div class="faq-item">
+        <h3>1. How do I track my order?</h3>
+        <p>You can track your order by visiting the 'My Orders' section on your account page. You'll also receive real-time updates via email and SMS once your order ships.</p>
+    </div>
+
+    <!-- FAQ 2 -->
+    <div class="faq-item">
+        <h3>2. How do I return a fashion item?</h3>
+        <p>We offer easy returns. Simply go to 'My Orders', select the item you wish to return, and follow the return steps. Check our Return Policy for more details.</p>
+    </div>
+
+    <!-- FAQ 3 -->
+    <div class="faq-item">
+        <h3>3. Can I exchange an item for a different size or color?</h3>
+        <p>If the product is eligible for exchange, you can exchange it for a different size or color through the 'My Orders' section. Refer to our Exchange Policy for more information.</p>
+    </div>
+
+    <!-- FAQ 4 -->
+    <div class="faq-item">
+        <h3>4. How long does delivery take for fashion items?</h3>
+        <p>Delivery time depends on your location and the product’s availability. Standard delivery takes between 3-7 business days. Express delivery options are available at checkout.</p>
+    </div>
+
+    <!-- FAQ 5 -->
+    <div class="faq-item">
+        <h3>5. Do you offer gift cards?</h3>
+        <p>Yes, we offer gift cards for fashion lovers. You can buy a gift card on our website and redeem it for purchases on any fashion items.</p>
+    </div>
+    
+    <!-- FAQ 6 -->
+    <div class="faq-item">
+        <h3>6. How can I cancel my order?</h3>
+        <p>You can cancel your order within 30 minutes of placing it. If your order has already been shipped, please contact customer support for assistance.</p>
+    </div>
+
+    <!-- FAQ 7 -->
+    <div class="faq-item">
+        <h3>7. How do I contact customer support?</h3>
+        <p>Our customer support team is available 24/7. You can reach out through the 'Contact Us' section or directly at support@fashionstore.com.</p>
+    </div>
+</section>
+
+
+</body>
+{% include 'footer.html' %}
+</html>

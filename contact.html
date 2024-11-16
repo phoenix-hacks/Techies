@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    {% include 'header.html' %}
+   <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #7091e7;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 20px;
+        }
+
+        .column {
+            flex: 1;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        input, textarea, button {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #7091e7;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color:#7091e7;
+        }
+
+        iframe {
+            width: 100%;
+            border: 0;
+            border-radius: 8px;
+        }
+
+        a {
+            color:#7091e7;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            iframe {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Contact Us</h1>
+</header>
+
+<div class="container">
+    <!-- Left Column: Contact Form -->
+    <div class="column">
+        <h2>Get in Touch</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Enter Name" required>
+            <input type="email" id="email" placeholder="Enter Email Address" required>
+            <textarea id="message" placeholder="Enter Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p>By contacting us, you agree to the <a href="terms">Terms and Conditions</a> and <a href="privacypolicy">Privacy Policy</a>.</p>
+    </div>
+
+    <!-- Right Column: Contact Information -->
+    <div class="column">
+        <h2>Customer Support</h2>
+        <p>Email: <a href="mailto:support@zesty.in">support@zesty.in</a></p>
+
+        <h2>Corporate Office</h2>
+        <p>No. 55, Sy No. 8-14, Ground Floor, I&J Block, Embassy TechVillage, Outer Ring Road, Devarbisanahalli, Bengaluru 560 103, Karnataka, India</p>
+        <p>Corporate Identity Number: U74110KA2013PLC096530</p>
+        <p>Registration Number: 096530</p>
+        <p><a href="#">Get Directions</a></p>
+
+        <h2>Our Location</h2>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.5231139722446!2d77.68577607406345!3d12.936148016102045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13e79e9d2355%3A0x91d50dd1e53b5e30!2sEmbassy%20TechVillage%2C%20Devarabisanahalli%2C%20Bengaluru%2C%20Karnataka%20560103!5e0!3m2!1sen!2sin!4v1696000000000!5m2!1sen!2sin" 
+            height="300" 
+            allowfullscreen="" 
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+<script>
+    document.getElementById('contactForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        const response = await fetch('/submit_contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, message })
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+            alert(result.message);
+            document.getElementById('contactForm').reset();
+        } else {
+            alert(result.error || 'Something went wrong.');
+        }
+    });
+</script>
+
+</body>
+</html>

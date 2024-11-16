@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Offers - Clothing & Accessories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+       body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #7091e7;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-weight: 400;
+        }
+
+        /* Main content */
+        .offers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 30px;
+        }
+
+        /* Offer Box */
+        .offer-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .offer-image {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .offer-content {
+            padding: 20px;
+        }
+
+        .offer-title {
+            font-size: 1.6em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .offer-description {
+            font-size: 1.1em;
+            color: #777;
+            margin: 10px 0;
+        }
+
+        .offer-price {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #e74c3c;
+            margin: 10px 0;
+        }
+
+        .offer-discount {
+            font-size: 1.2em;
+            color: #2ecc71;
+            font-weight: 500;
+        }
+
+        /* Button Styles */
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        
+    </style>
+    {% include 'header.html' %}
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1>Exclusive Offers on Clothing & Accessories</h1>
+    <p>Discover amazing deals from local shops! Hurry, limited-time offers!</p>
+</header>
+
+<!-- Main Content -->
+<section class="offers-container">
+
+    <!-- Offer 2 -->
+    <div class="offer-card">
+        <img src="https://rukminim2.flixcart.com/image/850/1000/l4iscy80/shoe/a/u/u/7-a-29-x-xiota-blue-original-imagfeq7zfeujwub.jpeg?q=90&crop=false" alt="Shoes Offer" class="offer-image">
+        <div class="offer-content">
+            <h2 class="offer-title">Exclusive Sneakers</h2>
+            <p class="offer-description">Get your hands on the latest sneakers from local brands, designed for comfort and style.</p>
+            <div class="offer-price">₹2,999</div>
+            <div class="offer-discount">25% OFF - While Supplies Last!</div>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+    </div>
+
+    <!-- Offer 3 -->
+    <div class="offer-card">
+        <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTLCMeKrJOx3lL5gLmaFxxpzMhD7loZHF6WkSP61fLIBhesaFMvG9dL4B_o-cybpAc3iumvlvw9PFkUzMCuy20VWOZDuJLZLcVPA0e0myRsTXouf4zUEADp7e4eQZ-C2xJShK6-hA&usqp=CAc" alt="Accessories Offer" class="offer-image">
+        <div class="offer-content">
+            <h2 class="offer-title">Fashionable Handbags</h2>
+            <p class="offer-description">Discover the latest handbag trends with sleek designs and vibrant colors.</p>
+            <div class="offer-price">₹1,799</div>
+            <div class="offer-discount">40% OFF - Limited Stock!</div>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+    </div>
+
+    <!-- Offer 4 -->
+    <div class="offer-card">
+        <img src="https://m.media-amazon.com/images/I/417QGyk3F5L._AC_UL480_FMwebp_QL65_.jpg" alt="Clothing Offer" class="offer-image">
+        <div class="offer-content">
+            <h2 class="offer-title">Vintage Jackets</h2>
+            <p class="offer-description">Stand out in a crowd with a vintage jacket. Classic designs with a modern twist.</p>
+            <div class="offer-price">₹4,499</div>
+            <div class="offer-discount">15% OFF - Act Fast!</div>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+    </div>
+
+    <!-- Offer 5 -->
+    <div class="offer-card">
+        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRtkpucYVRvW4JmaVNBsk_Twj-LyFYFwWCqrgT5-ArMofKbQrmPfu1d_XcDkUpvyZ1eMCP70dgUrZwiKt8lbo32zY-KkFrro_K6UAkTfTPtseW_McnBbhZnfg" alt="Shoes Offer" class="offer-image">
+        <div class="offer-content">
+            <h2 class="offer-title">Leather Boots</h2>
+            <p class="offer-description">High-quality leather boots designed to provide comfort and durability during winter.</p>
+            <div class="offer-price">₹3,999</div>
+            <div class="offer-discount">20% OFF - Limited Time Only!</div>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+    </div>
+
+    <!-- Offer 6 -->
+    <div class="offer-card">
+        <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRptMmkASwbreewW0RlxAk4XK6WG_cSFZ-qkfSt1798V_Ipye1RRtHOAYWzg3B8rcK7FECOGjdLyBc95kVj7sf7caVeqWkwtOsruK18NgL4ZGMT7_TqZwkWYQ" alt="Accessories Offer" class="offer-image">
+        <div class="offer-content">
+            <h2 class="offer-title">Trendy Sunglasses</h2>
+            <p class="offer-description">Add some style to your summer look with these trendy and stylish sunglasses.</p>
+            <div class="offer-price">₹1,299</div>
+            <div class="offer-discount">35% OFF - Limited Time!</div>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+    </div>
+
+    <!-- Offer 7 -->
+    <div class="offer-card">
+        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSUkMBMClJjMTLi8MOcYFsf8GSXVXorMknstixIBdsGL7QOO7nWZZ-zYQNxm2g24sVJvbeA2S6MtMS_GRvuIKTTp9MxboOdWx-CRnmnQo9R" alt="Clothing Offer" class="offer-image">
+        <div class="offer-content">
+            <h2 class="offer-title">Cozy Sweaters</h2>
+            <p class="offer-description">Stay warm and stylish with cozy sweaters. Perfect for the fall and winter season!</p>
+            <div class="offer-price">₹2,199</div>
+            <div class="offer-discount">20% OFF - While Stocks Last!</div>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+    </div>
+
+    <!-- Offer 8 -->
+    <div class="offer-card">
+        <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS4zdRa9IcZfM_Jg_u-dzGz8Gj6Z5XDoFQU4UznKVD_sSD65cw3ugOFyCkgShQJCVdzQddAF9W0JGU0x04FefSo6_JfD4Q22l0ebQI91ZY" alt="Shoes Offer" class="offer-image">
+        <div class="offer-content">
+            <h2 class="offer-title">Running Shoes</h2>
+            <p class="offer-description">Upgrade your workout with comfortable and durable running shoes from local brands.</p>
+            <div class="offer-price">₹2,799</div>
+            <div class="offer-discount">15% OFF - Hurry, Limited Stock!</div>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+    </div>
+
+    <!-- Offer 9 -->
+    <div class="offer-card">
+        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS-kGIHtiK4Y68CPL0U1pHRCjPx8vxDU8qEh6M4f679cdA6hpoQ_bOP7GG1vEznHMU6YW0q0a0ozf67WKERn7jrD6kilPoBBebzPKa8iton__6Ox_L9u7lMocY"Accessories Offer" class="offer-image">
+        <div class="offer-content">
+            <h2 class="offer-title">Chic Watches</h2>
+            <p class="offer-description">Accessorize with chic watches. Sleek designs perfect for everyday wear or special occasions.</p>
+            <div class="offer-price">₹3,499</div>
+            <div class="offer-discount">25% OFF - Limited Time Only!</div>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+    </div>
+
+</section>
+
+{% include 'footer.html' %}
+</body>
+</html>

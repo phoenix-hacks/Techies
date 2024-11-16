@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner with Zesty Fashion Delivery</title>
+    {% include 'header.html' %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font globally */
+}
+
+/* Body and Global Styles */
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+/* Links */
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Container to centralize content */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styling */
+header {
+    background: #7091e7;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Get Started Section */
+.get-started {
+    background: #fff;
+    padding: 40px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: -60px;
+    position: relative;
+    z-index: 10;
+}
+
+.get-started h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.get-started form {
+    margin-bottom: 20px;
+}
+
+.get-started input {
+    padding: 14px 18px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 350px;
+    margin-right: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.get-started input:focus {
+    border-color: #7091e7;
+}
+
+.get-started button {
+    padding: 14px 30px;
+    font-size: 16px;
+    background-color: #7091e7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.get-started button:hover {
+    background-color: #8f0404;
+}
+
+.get-started p {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* Steps Section */
+.steps {
+    background: #f9f9f9;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.steps h2 {
+    font-size: 30px;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.step {
+    display: inline-block;
+    width: 30%;
+    padding: 20px;
+    margin: 0 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.step h3 {
+    font-size: 24px;
+    color: #4CAF50;
+}
+
+.step p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Documents Section */
+.documents {
+    background: #fff;
+    padding: 60px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.documents h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.documents ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.documents ul li {
+    font-size: 18px;
+    margin: 15px 0;
+}
+     
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Partner with Zesty Fashion Delivery</h1>
+            <p>Deliver fashion to your customers in just 2 hours. Join Zesty to start delivering today!</p>
+        </div>
+    </header>
+
+    <!-- Get Started Section -->
+    <section class="get-started">
+        <div class="container">
+            <h2>Get Started Now</h2>
+            <form id="partnerForm">
+                <input type="tel" id="mobile" placeholder="Enter Mobile Number or Shop Registration ID" required>
+                <button type="submit">Continue</button>
+            </form>
+            <p>By logging in, I agree to Zesty’s <a href="terms">terms & conditions</a>.</p>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps">
+        <div class="container">
+            <h2>In Just 3 Easy Steps</h2>
+            <div class="step">
+                <h3>STEP 1</h3>
+                <p>Visit Zesty website Navigate to Partner with Us</p>
+            </div>
+            <div class="step">
+                <h3>STEP 2</h3>
+                <p>Login/Register using your mobile number</p>
+            </div>
+            <div class="step">
+                <h3>STEP 3</h3>
+                <p>Enter your shop details</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section class="documents">
+        <div class="container">
+            <h2>Keep These Documents Handy</h2>
+            <ul>
+                <li><strong>Shop Registration ID</strong></li>
+                <li><strong>Bank Details</strong></li>
+                <li><strong>PAN Card Copy</strong></li>
+                <li><strong>GSTIN</strong></li>
+            </ul>
+        </div>
+    </section>
+
+
+
+    <script>
+        document.getElementById('partnerForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form from reloading the page
+
+            const mobileOrShopId = document.getElementById('mobile').value;
+            if (mobileOrShopId) {
+                // Send the data to the backend (adjust the endpoint as needed)
+                fetch('http://localhost:5000/register_partner', { 
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ mobileOrShopId })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert('Successfully registered, we will be in touch soon!');
+                })
+                .catch(error => {
+                    alert('Error: ' + error);
+                });
+            } else {
+                alert('Please enter a valid mobile number or shop registration ID.');
+            }
+        });
+    </script>
+
+    {% include 'footer.html' %}
+</body>
+</html>

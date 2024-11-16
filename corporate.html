@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zesty - Instant fashion delivery from local stores">
+    <title>About Us - Zesty</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+            color:#970747;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            color: #970747; /* Brown color for h1 tags */
+        }
+  /* Navbar styling */
+  .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color:#7091e7;
+            padding: 5px 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Logo */
+        .navbar .logo {
+           width: 50px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .logo-img {
+    width: 100px;  /* Adjust the width as needed */
+    height: auto; /* Keeps the aspect ratio intact */
+}
+        /* Navbar items */
+        .navbar .navbar-right ul {
+            display: flex;
+            list-style-type: none;
+            gap: 20px;
+        }
+
+        .navbar .navbar-right ul li {
+            position: relative;
+        }
+
+        /* Navbar links */
+        .navbar .navbar-right ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effects */
+        .navbar .navbar-right ul li a:hover {
+            color: #860505;
+            transform: translateY(-5px);
+        }
+
+        /* Search icon and input field */
+        .search-bar {
+            position: absolute;
+            top: 50%;
+            right: -10px;
+            transform: translateY(-50%);
+            background-color: white;
+            border: 2px solid #ddd;
+            padding: 5px 15px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            transition: width 0.3s ease;
+            width: 0;
+            opacity: 0;
+            visibility: hidden;
+        }
+     
+
+       
+        /* About Us Section */
+        .about-us {
+            background: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .about-us h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color:#970747; /* Brown color for h1 tags */
+        }
+
+        .about-us p {
+            font-size: 18px;
+            color: #7f8c8d;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Vision, Mission, and Values Section */
+        .vision-mission-values {
+            background-color: #ffffff; /* Light Blue */
+            padding: 60px 20px;
+        }
+
+        .vision-mission-values .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .vision-mission-values h2 {
+            font-size: 32px;
+            color: #970747; /* Brown */
+            margin-bottom: 40px;
+        }
+
+        .vision-mission-values p {
+            font-size: 18px;
+            color: #7f8c8d;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .vision-mission-values ul {
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+        }
+
+        .vision-mission-values li {
+            margin-bottom: 15px;
+        }
+
+        .vision-mission-values li strong {
+            color: #970747;
+        }
+
+        /* Blog Section */
+        .blog {
+            background-color: #f4f4f4;
+            padding: 60px 20px;
+            color: #000;
+        }
+
+        .blog h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #3c6e71; /* Brown */
+        }
+
+        .blog-post {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-post h3 {
+            font-size: 28px;
+            color: #970747;
+            margin-bottom: 15px;
+        }
+
+        .blog-post p {
+            font-size: 18px;
+            color: #7f8c8d;
+            line-height: 1.8;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #3c6e71; /* Blue-green */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .vision-mission-values ul {
+                padding-left: 0;
+            }
+
+            .vision-mission-values li {
+                display: inline-block;
+                width: 48%;
+                margin: 10px 1%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+    
+            <a href="#" class="logo">
+                <img src="static/images/logo.png" alt="FashionQuick Logo" class="logo-img">
+            </a>
+       
+    
+                <div class="navbar-right">
+                    <ul>
+                    
+                        <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a href="#">Delivering Everyone</a></li>
+                        <li><a href="#"> News Room</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+            
+            </div>
+
+        </nav>
+    </header>
+
+   <!-- About Us Section -->
+<section class="about-us">
+    <div class="about-content">
+        <h1>About Zesty</h1>
+        <p>Welcome to Zesty! We are transforming the fashion delivery experience by connecting local boutiques and fashion stores with consumers in need of urgent fashion solutions. Our mission is to bring you the latest styles, delivered in record time—within 3-4 hours. Whether it’s for an event, an emergency, or just a last-minute wardrobe refresh, we ensure that you get your fashion fix without any delays.</p>
+
+        <h2>Our Story</h2>
+        <p>Zesty was founded with one simple vision: to bridge the gap between local fashion stores and consumers who demand speed, convenience, and variety. The traditional fashion retail model often leaves customers frustrated with long delivery times and limited access to local stores. Zesty is here to solve that by offering a platform where you can access a wide variety of fashion products available in your local stores and have them delivered quickly to your door. Our goal is to revolutionize fashion delivery by offering speed, convenience, and a broad selection—all in one place.</p>
+
+      
+
+        <h2>Our Commitment</h2>
+        <p>At Zesty, we are committed to supporting local businesses by offering them a platform that enhances their visibility while simultaneously solving a major pain point for consumers: long waiting times for deliveries. Our team works tirelessly to ensure that your fashion needs are met swiftly and efficiently, whether you’re shopping for the latest trends, seasonal collections, or last-minute outfits for that special occasion.</p>
+
+    </div>
+</section>
+
+
+    <!-- Vision, Mission, and Values -->
+    <section class="vision-mission-values">
+        <div class="container">
+            <h2>Our Vision</h2>
+            <p>We aim to empower local fashion stores by providing them with a seamless online platform, delivering fashion to customers quickly, conveniently, and efficiently. Our vision is to make fashion shopping as easy as possible, helping local businesses grow while serving fashion-conscious consumers with urgent needs.</p>
+
+            <h2>Our Mission</h2>
+            <p>Our mission is to bring fashion to your doorstep, quickly and at affordable prices, ensuring that customers never have to compromise on style due to time constraints.</p>
+
+            <h2>Our Core Values</h2>
+            <ul>
+                <li><strong>Speed:</strong> We value fast service, ensuring that our customers’ fashion needs are met within hours.</li>
+                <li><strong>Convenience:</strong> Shopping made simple and easy through our intuitive platform.</li>
+                <li><strong>Support for Local Businesses:</strong> Helping local boutiques and stores reach customers in need of urgent fashion.</li>
+                <li><strong>Customer Satisfaction:</strong> We strive to exceed customer expectations by offering reliable, speedy service.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog">
+        <h2>Read Our Latest Updates</h2>
+
+        <div class="blog-post">
+            <h3>The Rise of Instant Fashion Delivery</h3>
+            <p>Discover how Zesty is changing the way we think about fashion delivery and how we're helping fashion-conscious customers find the perfect look in no time...</p>
+        </div>
+
+        <div class="blog-post">
+            <h3>Supporting Local Fashion Stores</h3>
+            <p>Learn how our platform is making it easier for small local boutiques to thrive by connecting them directly with customers...</p>
+        </div>
+
+    </section>
+
+    {% include 'footer.html' %}
+</body>
+</html>
