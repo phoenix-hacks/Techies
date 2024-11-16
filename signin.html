@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    {% include 'header.html' %}
+
+    <style>
+     
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #7091e7;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .signin-container {
+            max-width: 900px;
+            width: 100%;
+            margin: 20px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .left-section {
+            width: 50%;
+            padding: 20px;
+            background: #982217;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            border-radius: 12px 0 0 12px;
+        }
+
+        .left-section h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .left-section p {
+            font-size: 16px;
+        }
+
+        .left-section img {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+
+        .form-section {
+            width: 50%;
+            padding: 40px;
+        }
+
+        .form-section h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus {
+            border-color: #3498db;
+            background-color: #ffffff;
+            box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #970747;
+            color: #ffffff;
+            font-size: 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color:#970747;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signup-link a {
+            color: #970747;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .signin-container {
+                flex-direction: column;
+            }
+
+            .left-section, .form-section {
+                width: 100%;
+                border-radius: 12px;
+            }
+        }
+    </style>
+</head>
+    </style>
+</head>
+<body>
+    <div class="signin-container">
+        <!-- Left Section -->
+        <div class="left-section">
+            <h2>Reconnect with Zesty Sign In Here</h2>
+            <img src="https://cdni.iconscout.com/illustration/premium/thumb/login-illustration-download-in-svg-png-gif-file-formats--select-an-account-join-the-forum-password-digital-marketing-pack-business-illustrations-8333958.png" alt="Sign In">
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-section">
+            <h3>Sign In</h3>
+            {% if welcome_message %}
+                <div class="welcome-message">{{ welcome_message }}</div>
+            {% else %}
+                <form action="/signin" method="POST" id="signinForm">
+                    <div class="input-group">
+                        <label for="email_or_mobile">Email or Mobile</label>
+                        <input type="text" id="email_or_mobile" name="email_or_mobile" placeholder="Enter your email or mobile" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit">Sign In</button>
+                    {% if error %}
+                        <div class="error-message">{{ error }}</div>
+                    {% endif %}
+                </form>
+            {% endif %}
+            <div class="signup-link">
+                <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+
+    <script>
+        // Validation remains the same
+    </script>
+</body>
+</html>
