@@ -125,22 +125,20 @@
 
     <nav class="navbar">
     
-            <a href="#" class="logo">
+            <a href="home" class="logo">
                 <img src="static/images/logo.png" alt="FashionQuick Logo" class="logo-img">
             </a>
        
         
         <div class="navbar-right">
             <ul>
-                <li><a href="#"><span class="material-icons">help_outline</span> Help</a></li>
-                <li><a href="#"><span class="material-icons">flash_on</span> Offers</a></li>
+                <li><a href="{{ url_for('help')}}"><span class="material-icons">help_outline</span> Help</a></li>
+                <li><a href="{{ url_for('home')}}"><span class="material-icons">help_outline</span> </a></li>
+                <li><a href="{{ url_for('offers')}}"><span class="material-icons">flash_on</span> Offers</a></li>
                 <li><a href="#"><span class="material-icons">storefront</span> Shop</a></li>
-                <li><a href="#"><span class="material-icons">lock_open</span> Sign In</a></li>
+                <li><a href="{{ url_for('signin')}}"><span class="material-icons">lock_open</span> Sign In</a></li>
                 <li><a href="#"><span class="material-icons">shopping_cart</span> Cart</a></li>
-                <!-- Search icon -->
-                <li><a href="javascript:void(0);" onclick="toggleSearchBar()">
-                    <span class="material-icons">search</span> Search
-                </a></li>
+                <li><a href="{{ url_for('profile') }}"><span class="material-icons">account_circle</span>Profile</a></li>
             </ul>
 
             <!-- Hidden search bar -->
