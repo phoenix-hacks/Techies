@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Example</title>
+    <style>
+        /* Footer styling */
+        .footer {
+            background-color:#7091e7;
+            padding: 40px 40px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-section {
+            flex: 1;
+            padding: 10px;
+            min-width: 200px;
+        }
+
+        .footer-logo {
+            font-size: 26px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #9a0707;
+            transform: translateY(-5px);
+        }
+
+        .social-media {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            color: rgb(0, 0, 0);
+            font-size: 30px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #870606;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <a href="#" class="footer-logo">
+                    <img src="static/images/logo.png" alt="Zesty Logo"> Zesty
+                </a>
+            </div>
+
+            <!-- Company Info Section -->
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Zesty Corporate</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Team</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal Section -->
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                </ul>
+            </div>
+
+            <!-- Locations Section -->
+            <div class="footer-section">
+                <h3>Available in:</h3>
+                <ul>
+                    <li>Bangalore</li>
+                    <li>Gurgaon</li>
+                    <li>Hyderabad</li>
+                    <li>Delhi</li>
+                    <li>Mumbai</li>
+                    <li>Pune</li>
+                </ul>
+            </div>
+
+            <!-- Social Media Links Section -->
+            <div class="footer-section">
+                <h3>Social Links</h3>
+                <div class="social-media">
+                    <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon" title="Pinterest"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Copyright Section -->
+        <div style="text-align: center; padding-top: 20px; font-size: 14px;">
+            <p>© 2024 Zesty Limited</p>
+        </div>
+    </footer>
+
+</body>
+</html>

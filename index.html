@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zesty - Your Fashion Quick Solution</title>
+    {% include 'header.html' %}
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color:#970747;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color:#7091e7;
+            color:#970747;
+            text-align: center;
+            padding: 120px 20px;
+            background-size: cover;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin: 20px 0;
+            font-weight: 300;
+        }
+
+        .hero .cta-button {
+            background-color:#970747;
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero .cta-button:hover {
+            background-color: #970747;
+            transform: translateY(-4px);
+        }
+
+        /* Featured Section */
+        .featured-section {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 70px 0;
+            padding: 40px;
+            background-color: #fff;
+        }
+
+        .feature-box {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            width: 280px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-box img {
+            width: 90px;
+            height: 90px;
+            margin-bottom: 20px;
+        }
+
+        .feature-box h3 {
+            font-size: 24px;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        .feature-box p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        /* How It Works Section */
+.how-it-works {
+    background-color: #f7f7f7;
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.how-it-works h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color:  #970747;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 40px;
+    flex-wrap: wrap; /* Ensure items stack on smaller screens */
+}
+
+.step {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 260px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.step h3 {
+    font-size: 22px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.step p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Step Icons */
+.step-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.step-icon:hover {
+    transform: scale(1.1);
+}
+
+
+        /* Customer Reviews Section */
+        .reviews {
+            background-color: #ffffff;;
+            color: #970747;
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .reviews h2 {
+            font-size: 35px;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .reviews .review-box {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #333;
+            padding: 25px;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .reviews .review-box p {
+            font-style: italic;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .reviews .review-box h4 {
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .reviews .review-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .featured-section, .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-box, .step {
+                width: 80%;
+                margin-bottom: 30px;
+            }
+
+            .cta-button {
+                width: 200px;
+                padding: 15px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Step into Zesty</h1>
+        <p>"Fast Fashion, Seamless Experience – Explore Trends That Move as Fast as You."</p>
+        <button class="cta-button">Start Shopping</button>
+    </div>
+
+    <!-- Featured Section -->
+    <div class="how-it-works">
+        <h2>How Zesty Works</h2>
+        <div class="steps">
+            <!-- Step 1 -->
+            <div class="step">
+                <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2022/04/06123553/hero..jpg" alt="Choose Your Items" class="step-icon">
+                <h3>Choose Your Items</h3>
+                <p>Select your desired shoes, clothes, accessories, and more from your favorite local stores.</p>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="step">
+                <img src="https://cdn-icons-png.flaticon.com/128/872/872243.png"alt="Add to Cart" class="step-icon">
+                <h3>Add to Cart & Checkout</h3>
+                <p>Once you’ve picked your items, easily add them to your cart and proceed with a quick and secure payment.</p>
+            </div>
+    
+            <!-- Step 3 -->
+            <div class="step">
+                <img src="https://cdn-icons-png.flaticon.com/128/3128/3128841.png" alt="Fast Delivery" class="step-icon">
+                <h3>Delivered in Hours</h3>
+                <p>We’ll deliver your items to your doorstep within hours. Fast, simple, and convenient.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customer Reviews Section -->
+    <div class="reviews">
+        <h2>Hear From the Zesty Fashionistas!"</h2>
+        <div class="review-box">
+            <p>"Zesty made it so easy to get the fashion I love, fast!"</p>
+            <h4>- Umesh Reddy.</h4>
+        </div>
+        <div class="review-box">
+            <p>"I got my order within 2 hours! Highly recommend."</p>
+            <h4>- Kusuma Shetty</h4>
+        </div>
+        <div class="review-box">
+            <p>"The variety and speed are unmatched in the market."</p>
+            <h4>-Akshya Kumar</h4>
+        </div>
+    </div>
+
+
+    {% include 'footer.html' %}
+</body>
+</html>
