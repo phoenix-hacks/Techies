@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+       <!-- Include Footer -->
+       {% include 'footer.html' %}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        header .logo h1 {
+            font-size: 1.5rem;
+        }
+
+        header .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        header .nav-links a:hover,
+        header .nav-links .active {
+            background-color: #007BFF;
+            border-radius: 5px;
+        }
+
+        .checkout-container {
+            max-width: 800px;
+            margin: 3rem auto;
+            background-color: #fff;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2,
+        h3,
+        h4 {
+            color: #007BFF;
+        }
+
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        #price-summary p {
+            font-size: 1.1rem;
+        }
+
+        button {
+            padding: 1rem;
+            background-color: #28a745;
+            color: #fff;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        @media screen and (max-width: 768px) {
+            header nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header .nav-links {
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+
+    <div class="checkout-container">
+        <form id="checkout-form">
+            <h2>Checkout</h2>
+
+            <label for="delivery-date">Select Delivery Date:</label>
+            <input type="date" id="delivery-date" required>
+
+            <label for="outlet">Outlet of Brand:</label>
+            <input type="text" id="outlet" placeholder="Enter Outlet Name" required>
+
+            <label for="shop-name">Shop Name:</label>
+            <input type="text" id="shop-name" placeholder="Enter Shop Name" required>
+
+            <label for="delivery-address">Delivery Address:</label>
+            <textarea id="delivery-address" placeholder="Enter Delivery Address" rows="4" required></textarea>
+
+            <label for="distance">Delivery Distance (in km):</label>
+            <input type="number" id="distance" placeholder="Enter Distance (km)" required>
+
+            <h3>Price Details</h3>
+            <label for="mrp">MRP (₹):</label>
+            <input type="number" id="mrp" placeholder="Enter MRP" required>
+
+            <label for="discount">Discount (%):</label>
+            <input type="number" id="discount" placeholder="Enter Discount %" required>
+
+            <label for="platform-fee">Platform Fee (₹):</label>
+            <input type="number" id="platform-fee" placeholder="Enter Platform Fee" required>
+
+            <h4>Taxes</h4>
+            <label for="sgst">SGST (%):</label>
+            <input type="number" id="sgst" placeholder="Enter SGST %" required>
+
+            <label for="cgst">CGST (%):</label>
+            <input type="number" id="cgst" placeholder="Enter CGST %" required>
+
+            <h4>Final Price Summary</h4>
+            <div id="price-summary">
+                <p>MRP: ₹<span id="mrp-value">0</span></p>
+                <p>Discount: ₹<span id="discount-value">0</span></p>
+                <p>Platform Fee: ₹<span id="platform-fee-value">0</span></p>
+                <p>SGST: ₹<span id="sgst-value">0</span></p>
+                <p>CGST: ₹<span id="cgst-value">0</span></p>
+                <p>Delivery Charge: ₹<span id="delivery-charge">0</span></p>
+                <h3>Total: ₹<span id="total-price">0</span></h3>
+            </div>
+
+            <button type="submit" id="place-order">Place Order</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('checkout-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const mrp = parseFloat(document.getElementById('mrp').value);
+            const discount = parseFloat(document.getElementById('discount').value);
+            const platformFee = parseFloat(document.getElementById('platform-fee').value);
+            const sgst = parseFloat(document.getElementById('sgst').value);
+            const cgst = parseFloat(document.getElementById('cgst').value);
+            const distance = parseFloat(document.getElementById('distance').value);
+
+            // Calculate Discounted Price
+            const discountAmount = (mrp * discount) / 100;
+            const discountedPrice = mrp - discountAmount;
+
+            // Calculate Delivery Charge based on distance (Assume 5 per km)
+            const deliveryCharge = distance * 5;
+
+            // Calculate Taxes (SGST + CGST)
+            const sgstAmount = (discountedPrice * sgst) / 100;
+            const cgstAmount = (discountedPrice * cgst) / 100;
+
+            // Calculate Total Price
+            const total = discountedPrice + sgstAmount + cgstAmount + platformFee + deliveryCharge;
+
+            // Update Price Summary
+            document.getElementById('mrp-value').textContent = mrp.toFixed(2);
+            document.getElementById('discount-value').textContent = discountAmount.toFixed(2);
+            document.getElementById('platform-fee-value').textContent = platformFee.toFixed(2);
+            document.getElementById('sgst-value').textContent = sgstAmount.toFixed(2);
+            document.getElementById('cgst-value').textContent = cgstAmount.toFixed(2);
+            document.getElementById('delivery-charge').textContent = deliveryCharge.toFixed(2);
+            document.getElementById('total-price').textContent = total.toFixed(2);
+        });
+    </script>
+       <!-- Include Footer -->
+       {% include 'footer.html' %}
+</body>
+
+</html>
